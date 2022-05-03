@@ -34,13 +34,15 @@ const Playbar = () => {
       <div className="left">
         {song && (
           <>
-            <div>{song.title}</div>
-
-            <div className="artist">{song.artist}</div>
+            <div>{song.titulo}</div>
+            <div>{song.album}</div>
           </>
         )}
       </div>
-
+      <div className="artista">
+        {song.artista}
+        <div>{song.ano}</div>
+      </div>
       <div className="middle">
         <div className="play-pause-circle" onClick={playOrPause}>
           <i
@@ -48,7 +50,6 @@ const Playbar = () => {
             style={{ transform: state.playing ? '' : 'translateX(1.5px)' }}
           />
         </div>
-
         <div style={{ marginTop: 2.5 }}>
           <span>{formatTime(Math.floor(state.currentTime))}</span>
 
@@ -64,6 +65,7 @@ const Playbar = () => {
           <span>{formatTime(state.duration)}</span>
         </div>
       </div>
+      <span>{song.avaliacao}</span>
 
       <div className="right">
         <i className="fa fa-volume-up" />
@@ -98,7 +100,7 @@ const CSS = css`
   .left {
     width: 200px;
 
-    .artist {
+    .artista {
       font-size: 14px;
       color: '#999999';
       margin-top: 5px;

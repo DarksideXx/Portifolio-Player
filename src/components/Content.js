@@ -6,7 +6,6 @@ import { StoreContext } from './index'
 
 import Modal from './Modal'
 import Toast from './Toast'
-import funcoes from './funcoes'
 
 const Content = () => {
   const { state, dispatch } = useContext(StoreContext)
@@ -46,23 +45,26 @@ const Content = () => {
           <thead>
             <tr>
               <td />
-              <td>Titulo</td>
-              <td>Músico/Banda</td>
-              <td>Album</td>
+              <td>Título</td>
+              <td>Álbum</td>
+              <td>Artista/Banda</td>
               <td>Ano</td>
-              <td>Avaliação</td>
+              <td>Tempo</td>
+              <td>Avaliações</td>
             </tr>
           </thead>
 
           <tbody>
             {songIds.map(id => {
               const {
-                title,
-                musico_banda,
+                titulo,
                 album,
-                ano
+                artista,
+                ano,
+                length,
+                avaliacao
               } = state.media[id]
-              const isFavorite = state.playlists.favorites.has(
+              const isFavorite = state.playlists.favoritos.has(
                 id
               )
 
@@ -105,10 +107,12 @@ const Content = () => {
                       }}
                     />
                   </td>
-                  <td>{title}</td>
-                  <td>{musico_banda}</td>
+                  <td>{titulo}</td>
                   <td>{album}</td>
+                  <td>{artista}</td>
                   <td>{ano}</td>
+                  <td>{length}</td>
+                  <td>{avaliacao}</td>
                 </tr>
               )
             })}

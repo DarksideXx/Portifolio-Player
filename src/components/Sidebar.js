@@ -3,6 +3,7 @@ import React, { useState, useRef, useContext } from 'react'
 import { css, jsx } from '@emotion/core'
 import { StoreContext } from './index'
 import Modal from './Modal'
+import Modal2 from './Modal2'
 import Toast from './Toast'
 import logo from '../img/spotify-white.png'
 
@@ -56,19 +57,19 @@ const Sidebar = () => {
 
       <Modal show={sidebarState.modal} close={handleModal}>
         <form onSubmit={addPlaylist}>
-          <div className="title">New Playlist</div>
+          <div className="title">Nova Playlist</div>
 
           <div className="content-wrap">
             <input
               type="text"
-              placeholder="My Playlist"
+              placeholder="Minha Playlist"
               ref={playlistRef}
               required
             />
 
             <br />
 
-            <button type="submit">Create</button>
+            <button type="submit">Criar</button>
           </div>
         </form>
       </Modal>

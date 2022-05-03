@@ -9,7 +9,6 @@ import Sidebar from './Sidebar'
 import Content from './Content'
 import Playbar from './Playbar'
 
-
 export const StoreContext = createContext(null)
 
 const MusicPlayer = () => {
@@ -37,13 +36,12 @@ const MusicPlayer = () => {
         <Sidebar />
         <Content />
         <Playbar />
-        <music />
 
         <audio
           ref={audioRef}
           src={
-            song && song.title
-              ? `./media/${song.title} - ${song.artist}.mp3`
+            song && song.titulo
+              ? `./media/${song.titulo} - ${song.artista}.mp3`
               : ''
           }
           onLoadedMetadata={() =>
