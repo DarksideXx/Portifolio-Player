@@ -1,14 +1,14 @@
 {
   "name": "react-hacker",
   "version": "3.0.0",
-  "description": "Um simples iniciador de React que é perfeito para brincar. Vem com Babel, Emotion CSS em JS, ESlint e Prettier.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.js --open",
     "build": "webpack --config webpack.config.js",
     "postinstall": "npm run build"
   },
-  "author": "Emanuel Goncalves",
+  "author": "Emanuel Gonçalves",
   "license": "MIT",
   "dependencies": {
     "@emotion/core": "^10.0.10",
@@ -22,10 +22,10 @@
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
+    "@babel/compat-data": "7.9.0",
     "@babel/core": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
-    "@babel/compat-data": "7.9.0",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "babel-preset-react": "^6.24.1",
@@ -35,7 +35,7 @@
     "file-loader": "^5.0.2",
     "prettier": "^1.18.2",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.10.1"
   }
 }
