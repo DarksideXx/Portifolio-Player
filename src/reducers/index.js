@@ -13,7 +13,7 @@ export const initialState = {
   playing: false,
   playlists: {
     home: new Set(media.ids),
-    favorites: new Set()
+    favoritos: new Set()
   },
   volume: DEFAULT_VOLUME
 }
@@ -30,7 +30,7 @@ export const reducer = (state, action) => {
     case 'ABORT_ADD_TO_PLAYLIST':
       return { ...state, addToPlaylistId: '' }
     case 'ADD_FAVORITE':
-      state.playlists.favorites.add(action.songId)
+      state.playlists.favoritos.add(action.songId)
       return { ...state }
     case 'PLAY':
       return {
@@ -41,14 +41,13 @@ export const reducer = (state, action) => {
     case 'PAUSE':
       return { ...state, playing: false }
     case 'REMOVE_FAVORITE':
-      state.playlists.favorites.delete(action.songId)
+      state.playlists.favoritos.delete(action.songId)
       return { ...state }
     case 'SAVE_TO_PLAYLIST':
       state.playlists[action.playlist].add(state.addToPlaylistId)
       return { ...state, addToPlaylistId: '' }
-      case 'add_music':
-      state.music[action.music].add(state.addTomusicId)
-      return { ...state, addTomusicId: '' }
+    case 'SET_CURRENT_TIME':
+      return { ...state, currentTime: action.time }
     case 'SET_DURATION':
       return { ...state, duration: action.duration }
     case 'SET_PLAYLIST':
